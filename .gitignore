@@ -1,0 +1,8 @@
+#忽略天池训练的数据文件夹
+Emotion_Recognition/Emotion_Recognition_File/*
+Emotion_Recognition/image_src
+Emotion_Recognition/models
+Emotion_Recognition/opencv_facetest
+Emotion_Recognition/results
+Emotion_Recognition/runs
+Emotion_Recognition/all_scalars.json
