@@ -6,3 +6,6 @@ Emotion_Recognition/opencv_facetest
 Emotion_Recognition/results
 Emotion_Recognition/runs
 Emotion_Recognition/all_scalars.json
+
+#忽略PyTorch训练的数据文件
+data/*
