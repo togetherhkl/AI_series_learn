@@ -99,10 +99,16 @@ test_dataloader = DataLoader(test_data, batch_size=64, shuffle=True)
 这意味着每个周期（epoch）开始时，数据的顺序都会随机化，有助于模型学习到更加泛化的特征，从而减少过拟合的风险。
 '''
 train_features, train_labels = next(iter(train_dataloader))
-print(f"Feature batch shape: {train_features.size()}")
-print(f"Labels batch shape: {train_labels.size()}")
-img = train_features[0].squeeze()
+#iter(train_dataloader)返回一个迭代器对象，next()函数返回迭代器的下一批数据
+print(f"Feature batch shape: {train_features.size()}")#size()返回张量的形状（批量大小、通道数、高度、宽度）
+print(f"Labels batch shape: {train_labels.size()}")#size()返回张量的形状（批量大小）
+img = train_features[0].squeeze()#删除维度为1的轴，特别是当图像以（1，高度，宽度）或（1，通道数，高度，宽度）的形式存在时。
 label = train_labels[0]
 plt.imshow(img, cmap="gray")
 plt.show()
 print(f"Label: {label}")
+'''
+Feature batch shape: torch.Size([64, 1, 28, 28])
+Labels batch shape: torch.Size([64])
+Label: 6
+'''
